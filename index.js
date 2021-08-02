@@ -275,29 +275,29 @@ const createEmployee = function () {
 
 createManager().then(createEmployee);
 
-const page = function (pageHTML)
-{
-    fs.writeFile('./dist/index.html', pageHTML, (err) =>
-    {
-        if (err) {
-            console.log(err);
-        }
-        else
-        {
-            console.log("It has been created !");
-        }
-    })
-}
+// const page = function (pageHTML)
+// {
+//     fs.writeFile('./dist/index.html', pageHTML, (err) =>
+//     {
+//         if (err) {
+//             console.log(err);
+//         }
+//         else
+//         {
+//             console.log("It has been created !");
+//         }
+//     })
+// }
 
-createManager().then(teamMember => {
-    return writeHTMl(teamMember);
-})
-.then(pageHTML => {
-    page(pageHTML);
-})
-.catch((err) => {
-    if (err)
-    {
-        console.log(err);
-    }
-});
+// createManager().then(teamMember => {
+//     return writeHTMl(teamMember);
+// })
+// .then(pageHTML => {
+//     page(pageHTML);
+// })
+// .catch((err) => {
+//     if (err)
+//     {
+//         console.log(err);
+//     }
+// });
