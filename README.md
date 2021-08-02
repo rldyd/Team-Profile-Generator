@@ -6,7 +6,7 @@ This challenge is to create a team profile using node.js. Through node.js, you c
 
 
 ISSUED 'Screencastify'
-This program doesn't work on my computer. I installed and erased several times, but if I press the 'Record' button, nothing pops up and it doesn't record. So I deal with it with screenshots.
+
 
 <img width="1431" alt="1" src="https://user-images.githubusercontent.com/84109630/127791156-1009051b-32f1-41b9-a336-ec7390b61fc4.png">
 <img width="1440" alt="2" src="https://user-images.githubusercontent.com/84109630/127791162-9f51b68f-82b1-4bff-8a23-0ef9090a99ae.png">
