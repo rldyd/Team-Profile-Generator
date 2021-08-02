@@ -19,12 +19,15 @@
 // WHEN I decide to finish building my team
 // THEN I exit the application, and the HTML is generated
 
-
+const fs = require('fs');
 const inquirer = require('inquirer');
+const generatePage = require('./src/page-template');
 
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+
+const teamMember = [];
 
 //Function of Manager
 const createManager = () => {
@@ -89,11 +92,13 @@ const createManager = () => {
         .then((answer) => {
             const manager = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
             console.log(manager);
+            teamMember.push(manager);
+            console.log(teamMember);
         });
 }
 
 //Function of Engineer
-const createEngineer = function() {
+const createEngineer = function () {
     return inquirer.prompt([
         {
             type: 'input',
@@ -155,12 +160,14 @@ const createEngineer = function() {
         .then((answer) => {
             const engineer = new Engineer(answer.name, answer.id, answer.email, answer.github);
             console.log(engineer);
+            teamMember.push(engineer);
+            console.log(teamMember);
         })
         .then(createEmployee);
 }
 
 //Function of Intern
-const createIntern= function() {
+const createIntern = function () {
     return inquirer.prompt([
         {
             type: 'input',
@@ -222,6 +229,8 @@ const createIntern= function() {
         .then((answer) => {
             const intern = new Intern(answer.name, answer.id, answer.email, answer.school);
             console.log(intern);
+            teamMember.push(intern);
+            console.log(teamMember);
         })
         .then(createEmployee);
 }
@@ -240,33 +249,55 @@ const createEmployee = function () {
                 name: 'roleType',
                 message: 'What role do you want to add in your team?',
                 choices: ['Engineer', 'Intern'],
-                when: ({confirmAddRoles}) => {
-                    if(confirmAddRoles)
-                    {
+                when: ({ confirmAddRoles }) => {
+                    if (confirmAddRoles) {
                         return true;
                     }
-                    else 
-                    {
+                    else {
                         return false;
                     }
                 }
             }
         ])
-   
+
         .then((answer) => {
-            if(answer.roleType === 'Engineer')
-            {
+            if (answer.roleType === 'Engineer') {
                 console.log("Engineer profile has been created in your team");
                 createEngineer();
             }
-            else if(answer.roleType === 'Intern')
-            {
+            else if (answer.roleType === 'Intern') {
                 console.log("Intern profile has been created in your team");
                 createIntern();
             }
         });
+        
 };
 
 createManager().then(createEmployee);
 
+const page = function (pageHTML)
+{
+    fs.writeFile('./dist/index.html', pageHTML, (err) =>
+    {
+        if (err) {
+            console.log(err);
+        }
+        else
+        {
+            console.log("It has been created !");
+        }
+    })
+}
 
+createManager().then(teamMember => {
+    return writeHTMl(teamMember);
+})
+.then(pageHTML => {
+    page(pageHTML);
+})
+.catch((err) => {
+    if (err)
+    {
+        console.log(err);
+    }
+});
