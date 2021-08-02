@@ -5,7 +5,7 @@ This challenge is to create a team profile using node.js. Through node.js, you c
 <img width="1440" alt="Screen Shot 2021-08-01 at 8 08 20 PM" src="https://user-images.githubusercontent.com/84109630/127789516-16a4225e-c9e0-4872-9c76-0d3bf0ebd9f0.png">
 
 
-ISSUED 'Screencastify'
+There is a problem with 'Screencastify' program. I wrote down the details where I submit my challenge.
 
 
 <img width="1431" alt="1" src="https://user-images.githubusercontent.com/84109630/127791156-1009051b-32f1-41b9-a336-ec7390b61fc4.png">
