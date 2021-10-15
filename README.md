@@ -23,7 +23,5 @@ https://user-images.githubusercontent.com/84109630/137429183-d6222bfc-d8f8-4b31-
 
 * Jorge Martinez: https://github.com/jamart01
 
-* Ani: https://github.com/anidino
-
 * Ben: https://github.com/bgallag5
 
