@@ -9,7 +9,7 @@ Build a Node.js command-line application that takes in information about employe
 
 https://user-images.githubusercontent.com/84109630/137428753-b2c21fb4-5def-4606-8db0-79427fd6e4e4.mov
 
-## Create Team Members (DEMO)
+## Create Team Members
 
 https://user-images.githubusercontent.com/84109630/137429044-fc91fb64-3eb2-464b-bf94-033eb46862a9.mov
 
